@@ -7,6 +7,16 @@ import json
 from threading import Thread
 import mimetypes
 
+# Optional audio — pygame handles MP3 + volume on all platforms
+try:
+    import pygame
+    pygame.mixer.init()
+    _AUDIO_OK = True
+except Exception:
+    _AUDIO_OK = False
+
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # ─────────────────────────────────────────────
 #  DEFAULTS
 # ─────────────────────────────────────────────
@@ -25,6 +35,8 @@ DEFAULTS = {
     "send_timeout": 30,
     "file_delay":   0.8,
     "formats":      ".jpg,.jpeg,.png,.gif,.bmp,.webp",
+    "sound_enabled": True,
+    "sound_volume":  0.8,
 }
 
 C = dict(DEFAULTS)  # live colour dict, mutated by settings
@@ -475,6 +487,30 @@ class SettingsManager(BasePopup):
 
         tk.Frame(inner, bg=C["bg"], height=6).pack()
 
+        # ── Sound ──
+        self._section(inner, "Sound Notifications")
+
+        sound_row = tk.Frame(inner, bg=C["bg"])
+        sound_row.pack(fill="x", pady=2)
+        self._vars["sound_enabled"] = tk.BooleanVar(
+            value=bool(self.settings.get("sound_enabled", True)))
+        mk_chk(sound_row, "Enable sounds  (validation.mp3 / exclamation.mp3)",
+               self._vars["sound_enabled"], bg=C["bg"]).pack(side="left")
+
+        vol_row = tk.Frame(inner, bg=C["bg"])
+        vol_row.pack(fill="x", pady=2)
+        mk_label(vol_row, "Volume  (0.0 – 1.0)", fg=C["fg"], width=30, anchor="w").pack(side="left")
+        self._vars["sound_volume"] = tk.StringVar(
+            value=str(self.settings.get("sound_volume", 0.8)))
+        mk_entry(vol_row, textvariable=self._vars["sound_volume"], width=8).pack(side="left", padx=(6, 0))
+
+        if not _AUDIO_OK:
+            mk_label(inner,
+                     "pygame not installed — sounds disabled.  Run: pip install pygame",
+                     fg=C["warning"], font=("Segoe UI", 8)).pack(anchor="w", pady=(2, 0))
+
+        tk.Frame(inner, bg=C["bg"], height=6).pack()
+
         # ── Colours ──
         self._section(inner, "Colours (hex codes)")
 
@@ -533,6 +569,12 @@ class SettingsManager(BasePopup):
             except ValueError:
                 out[key] = DEFAULTS[key]
         out["formats"] = self._vars["formats"].get().strip()
+        out["sound_enabled"] = bool(self._vars["sound_enabled"].get())
+        try:
+            vol = float(self._vars["sound_volume"].get())
+            out["sound_volume"] = max(0.0, min(1.0, vol))
+        except ValueError:
+            out["sound_volume"] = DEFAULTS["sound_volume"]
         for key in ["bg","bg2","bg3","accent","accent2","danger","warning","fg","fg2","border"]:
             val = self._vars[key].get().strip()
             out[key] = val if val.startswith("#") and len(val) == 7 else DEFAULTS.get(key)
@@ -909,6 +951,7 @@ class WIS:
                             continue
                         all_ok = all(self._send(abs_fp, wh) for wh in webhooks)
                         self.sent_files.add(abs_fp)
+                        self._play_sound(all_ok)
                         if all_ok: self._sent_count += 1
                         else:      self._fail_count += 1
                         self.root.after(0, lambda sc=self._sent_count, fc=self._fail_count: (
@@ -918,6 +961,27 @@ class WIS:
                 except Exception as e:
                     self.log(f"Error scanning {fc['path']}: {e}", "err")
             time.sleep(scan_rate)
+
+    def _play_sound(self, ok: bool):
+        """Play validation.mp3 on success or exclamation.mp3 on failure (background thread)."""
+        if not _AUDIO_OK:
+            return
+        if not self.settings.get("sound_enabled", True):
+            return
+        fname = "validation.mp3" if ok else "exclamation.mp3"
+        path  = os.path.join(_SCRIPT_DIR, fname)
+        if not os.path.isfile(path):
+            return
+        def _play():
+            try:
+                vol = float(self.settings.get("sound_volume", 0.8))
+                vol = max(0.0, min(1.0, vol))
+                sound = pygame.mixer.Sound(path)
+                sound.set_volume(vol)
+                sound.play()
+            except Exception as e:
+                self.log(f"Sound error: {e}", "debug")
+        Thread(target=_play, daemon=True).start()
 
     def _send(self, file_path, webhook):
         fname   = os.path.basename(file_path)
