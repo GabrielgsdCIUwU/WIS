@@ -1,28 +1,28 @@
 # WIS — Webhook Image Sender
 
-A lightweight desktop app that monitors a folder for new images and automatically sends them to a webhook URL
+A desktop app that monitors folders for new images and automatically sends them to one or more webhook URLs
 
 ## Features
 
-- **Folder monitoring** — watches a chosen directory for newly added image files
-- **Automatic webhook delivery** — sends new images via HTTP POST as soon as they appear
+- **Multiple folders** — monitor any number of directories simultaneously, each with an independent enable toggle and optional recursive subfolder scanning
+- **Multiple webhooks** — send every detection to all enabled webhooks at once
+- **Sound notifications** — plays `validation.mp3` on success and `exclamation.mp3` on failure (volume adjustable)
 - **Auto-start** — optionally begin monitoring immediately on launch
-- **Persistent settings** — folder path, webhook URL, and preferences are saved between sessions
-- **Debug mode** — verbose logging to help troubleshoot detection and sending issues
-- **Supported formats** — `.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.webp`
+- **Persistent settings** — all configuration is saved between sessions
+- **Debug mode** — verbose scan logging to help troubleshoot detection issues
+- **Supported formats** — `.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.webp` (configurable)
 
 ## Requirements
 
 - Python 3.7+
-- `requests` library
-
-Install dependencies :
+- `requests`
+- `pygame` (optional — required for sound notifications)
 
 ```bash
-pip install requests
+pip install requests pygame
 ```
 
-> `tkinter` is included with most standard Python installations. If it's missing, install it via your system package manager (e.g. `sudo apt install python3-tk` on Debian/Ubuntu)
+> `tkinter` is included with most standard Python installations. If missing: `sudo apt install python3-tk` (Debian/Ubuntu)
 
 ## Usage
 
@@ -30,29 +30,57 @@ pip install requests
 python WIS.py
 ```
 
-1. Click **Browse** to select the folder you want to monitor
-2. Enter your **Webhook URL** in the provided field
-3. Optionally check **Auto-start monitoring when opening the app**
+1. Click **Manage Folders** to add the directories you want to monitor
+2. Click **Manage Webhooks** to add your webhook URLs
+3. Optionally check **Auto-start on launch**
 4. Click **Start Monitoring**
 
-WIS will scan the folder every second. Any image file added after monitoring begins will be sent to the webhook automatically. Files that existed in the folder before monitoring started are ignored
+## Folder Manager
+
+Each folder entry has two toggles:
+
+| Toggle | Effect |
+|---|---|
+| On/Off | Include or exclude this folder from the current session |
+| Recursive | Also scan all subfolders within the directory |
+
+## Webhook Manager
+
+Add as many webhooks as needed. When a new image is detected, WIS sends it to every enabled webhook. Each delivery is logged individually with its success or failure status
 
 ## Settings
 
-Settings are saved automatically to `webhook_settings.json` in the same directory as `WIS.py`. This file stores :
+Click the **Settings** button to configure:
 
-- `folder_path` — last used folder
-- `webhook_url` — last used webhook URL
-- `auto_start` — whether to start monitoring on launch
+| Setting | Default | Description |
+|---|---|---|
+| Scan rate | `1.0 s` | How often folders are polled |
+| Send timeout | `30 s` | HTTP request timeout per webhook |
+| File settle delay | `0.8 s` | Wait after detection before sending |
+| Extensions | `.jpg,.jpeg,.png,.gif,.bmp,.webp` | Watched file types |
+| Sound enabled | On | Play sounds on send success / failure |
+| Volume | `0.8` | Sound volume from `0.0` to `1.0` |
+| Colours | — | Full UI colour customisation via hex codes |
+
+All settings are saved to `webhook_settings.json` in the same directory as `WIS.py`
+
+## Sound Notifications
+
+Place `validation.mp3` and `exclamation.mp3` in the same directory as `WIS.py`. WIS will play:
+
+- `validation.mp3` — when a file is successfully delivered to **all** webhooks
+- `exclamation.mp3` — when delivery fails on **any** webhook
+
+Sounds require `pygame`. If it is not installed, a notice is shown in the Settings menu
 
 ## How It Works
 
-When monitoring starts, WIS takes a snapshot of all existing image files in the folder and marks them as already sent. It then polls the folder once per second. When a new image file appears, it waits one second to ensure the file is fully written, verifies the file is non-empty, and then POSTs it to the webhook as `multipart/form-data`
+When monitoring starts, WIS snapshots all existing image files in each folder and marks them as already seen. It then polls at the configured scan rate. When a new image appears, WIS waits for the file settle delay, verifies the file is non-empty, and POSTs it to every enabled webhook as `multipart/form-data`
 
-A success is recorded for HTTP responses `200`, `201`, or `204`. Any other status code or network error is logged in the UI
+HTTP `200`, `201`, and `204` are treated as success. Anything else, or a network error, is logged and counts as a failure
 
 ## Notes
 
-- Only files placed directly in the monitored folder are detected — subdirectories are not scanned recursively
-- The sent-files list resets each time you stop and restart monitoring
+- The seen-files list resets each time monitoring is stopped and restarted
 - Webhook endpoints must accept `multipart/form-data` file uploads
+- Colour changes require an app restart to apply fully
