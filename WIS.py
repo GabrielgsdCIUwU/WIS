@@ -206,7 +206,7 @@ class WebhookManager(BasePopup):
     def __init__(self, parent, webhooks, on_save):
         super().__init__(parent, "Webhook Manager",
                          "One detection is sent to all enabled webhooks",
-                         size="600x500")
+                         size="600x540")
         self.webhooks  = [dict(w) for w in webhooks]
         self.on_save   = on_save
         self._edit_idx = None
@@ -216,41 +216,48 @@ class WebhookManager(BasePopup):
     def _build(self):
         b = self.body
 
-        # ── list ──
-        self.panel = TreePanel(b,
+        # ── TOP: tree + action buttons (no expand) ──
+        top = tk.Frame(b, bg=C["bg"])
+        top.pack(fill="x", side="top")
+
+        self.panel = TreePanel(top,
             columns=("on", "name", "url"),
             headings=("On", "Name", "URL"),
-            widths=(44, 140, 340))
-        self.panel.pack(fill="both", expand=True)
+            widths=(44, 140, 340),
+            height=7)
+        self.panel.pack(fill="x")
 
-        act = tk.Frame(b, bg=C["bg"])
+        act = tk.Frame(top, bg=C["bg"])
         act.pack(fill="x", pady=(4, 0))
         mk_btn(act, "Edit",   self._edit,   color=C["bg3"], fg=C["accent"]).pack(side="left", padx=(0, 4))
         mk_btn(act, "Toggle", self._toggle, color=C["bg3"], fg=C["warning"]).pack(side="left", padx=4)
         mk_btn(act, "Remove", self._remove, color=C["bg3"], fg=C["danger"]).pack(side="left", padx=4)
 
-        tk.Frame(b, bg=C["border"], height=1).pack(fill="x", pady=8)
+        tk.Frame(b, bg=C["border"], height=1).pack(fill="x", pady=8, side="top")
 
-        # ── add / edit form  (pure pack, no grid mixing) ──
-        mk_label(b, "Add / Edit Webhook", fg=C["accent"],
+        # ── BOTTOM: add / edit form (always visible) ──
+        bottom = tk.Frame(b, bg=C["bg"])
+        bottom.pack(fill="x", side="top")
+
+        mk_label(bottom, "Add / Edit Webhook", fg=C["accent"],
                  font=("Segoe UI", 9, "bold")).pack(anchor="w", pady=(0, 6))
 
         # Name row
-        name_row = tk.Frame(b, bg=C["bg"])
+        name_row = tk.Frame(bottom, bg=C["bg"])
         name_row.pack(fill="x", pady=2)
         mk_label(name_row, "Name:", fg=C["fg2"], width=6, anchor="w").pack(side="left")
         self._name_var = tk.StringVar()
         mk_entry(name_row, textvariable=self._name_var, width=26).pack(side="left", padx=(4, 0))
 
         # URL row
-        url_row = tk.Frame(b, bg=C["bg"])
+        url_row = tk.Frame(bottom, bg=C["bg"])
         url_row.pack(fill="x", pady=2)
         mk_label(url_row, "URL:", fg=C["fg2"], width=6, anchor="w").pack(side="left")
         self._url_var = tk.StringVar()
         mk_entry(url_row, textvariable=self._url_var, width=56).pack(side="left", padx=(4, 0), fill="x", expand=True)
 
         # Buttons
-        btn_row = tk.Frame(b, bg=C["bg"])
+        btn_row = tk.Frame(bottom, bg=C["bg"])
         btn_row.pack(fill="x", pady=(8, 0))
         self._add_btn = mk_btn(btn_row, "+ Add", self._commit, color=C["accent2"], fg=C["bg"])
         self._add_btn.pack(side="left")
