@@ -11,6 +11,7 @@ import mimetypes
 # ─────────────────────────────────────────────
 #  COLOUR / FONT CONSTANTS  (dark industrial)
 # ─────────────────────────────────────────────
+
 BG        = "#0f1117"
 BG2       = "#181c26"
 BG3       = "#1f2433"
@@ -74,6 +75,7 @@ def separator(parent, pady=6):
 # ─────────────────────────────────────────────
 #  SUB-WINDOW: Webhook Manager
 # ─────────────────────────────────────────────
+
 class WebhookManagerWindow(tk.Toplevel):
     def __init__(self, parent, webhooks: list, on_save):
         super().__init__(parent)
@@ -234,6 +236,7 @@ class WebhookManagerWindow(tk.Toplevel):
 # ─────────────────────────────────────────────
 #  SUB-WINDOW: Folder Manager
 # ─────────────────────────────────────────────
+
 class FolderManagerWindow(tk.Toplevel):
     def __init__(self, parent, folders: list, on_save):
         super().__init__(parent)
@@ -389,6 +392,7 @@ class FolderManagerWindow(tk.Toplevel):
 # ─────────────────────────────────────────────
 #  MAIN APPLICATION
 # ─────────────────────────────────────────────
+
 class WebhookImageSender:
     def __init__(self, root):
         self.root = root
@@ -838,6 +842,7 @@ class WebhookImageSender:
 # ─────────────────────────────────────────────
 #  ENTRY POINT
 # ─────────────────────────────────────────────
+
 def main():
     root = tk.Tk()
     root.minsize(680, 520)
