@@ -37,7 +37,7 @@ python WIS.py
 
 ## Folder Manager
 
-Each folder entry has two toggles:
+Each folder entry has two toggles :
 
 | Toggle | Effect |
 |---|---|
@@ -50,7 +50,7 @@ Add as many webhooks as needed. When a new image is detected, WIS sends it to ev
 
 ## Settings
 
-Click the **Settings** button to configure:
+Click the **Settings** button to configure :
 
 | Setting | Default | Description |
 |---|---|---|
@@ -66,7 +66,7 @@ All settings are saved to `webhook_settings.json` in the same directory as `WIS.
 
 ## Sound Notifications
 
-Place `validation.mp3` and `exclamation.mp3` in the same directory as `WIS.py`. WIS will play:
+Place `validation.mp3` and `exclamation.mp3` in the same directory as `WIS.py`. WIS will play :
 
 - `validation.mp3` — when a file is successfully delivered to **all** webhooks
 - `exclamation.mp3` — when delivery fails on **any** webhook
