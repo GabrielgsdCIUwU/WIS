@@ -7,7 +7,7 @@ A desktop app that monitors folders for new images and automatically sends them 
 - **Multiple folders** — monitor any number of directories simultaneously, each with an independent enable toggle and optional recursive subfolder scanning
 - **Multiple webhooks** — send every detection to all enabled webhooks at once
 - **Statistics dashboard** — track sends per month, per webhook, per folder, file type breakdowns, error analytics, and a full recent-send history
-- **Theme system** — 8 built-in colour presets, a live colour editor with swatch previews, and support for saving, exporting, and importing custom themes
+- **Theme system** — 8 built-in color presets, a live color editor with swatch previews, and support for saving, exporting, and importing custom themes
 - **Sound notifications** — plays `validation.mp3` on success and `exclamation.mp3` on failure (volume adjustable)
 - **Auto-start** — optionally begin monitoring immediately on launch
 - **Persistent settings** — all configuration is saved between sessions in `wis_settings.json`
@@ -85,7 +85,7 @@ Click the **Settings** button to configure all options in one place:
 | Months in bar chart | `12` | How many months the Overview chart covers |
 | Autosave every N sends | `10` | How frequently stats are flushed to disk |
 
-### Theme Presets & Colour Editor
+### Theme Presets & Color Editor
 
 See [Themes](#themes) below
 
@@ -109,7 +109,7 @@ Statistics persist to `wis_stats.json` in the same directory. Use **↻ Refresh*
 
 ## Themes
 
-WIS ships with 8 built-in colour presets accessible from **Settings → Theme Presets**:
+WIS ships with 8 built-in color presets accessible from **Settings → Theme Presets**:
 
 | Preset | Description |
 |---|---|
@@ -122,21 +122,21 @@ WIS ships with 8 built-in colour presets accessible from **Settings → Theme Pr
 | Rose Pine | Muted rose and pine tones |
 | Light | Clean light theme |
 
-### Colour Editor
+### Color Editor
 
-Below the preset selector, every UI colour has an editable hex field with a live swatch preview that updates as you type. Changes apply after clicking **Save & Close** (a full restart applies them everywhere).
+Below the preset selector, every UI color has an editable hex field with a live swatch preview that updates as you type. Changes apply after clicking **Save & Close** (a full restart applies them everywhere).
 
 ### Custom Presets
 
-1. Adjust colours in the editor
+1. Adjust colors in the editor
 2. Type a name in the **Save as** field and click **Save Preset**
 3. The preset appears in the dropdown alongside built-in themes and persists between sessions
 4. Select a custom preset and click **Delete Custom** to remove it
 
 ### Import / Export
 
-- **⬆ Export Theme** — saves the current colour editor values to a `.wistheme` file that can be shared
-- **⬇ Import Theme** — loads a `.wistheme` or `.json` file, validates its colours, and optionally saves it as a named custom preset
+- **⬆ Export Theme** — saves the current color editor values to a `.wistheme` file that can be shared
+- **⬇ Import Theme** — loads a `.wistheme` or `.json` file, validates its colors, and optionally saves it as a named custom preset
 
 ## Sound Notifications
 
@@ -166,4 +166,4 @@ Both files are created automatically in the same directory as `WIS.pyw`
 
 - The seen-files list resets each time monitoring is stopped and restarted
 - Webhook endpoints must accept `multipart/form-data` file uploads
-- Colour changes require an app restart to apply fully
+- Color changes require an app restart to apply fully
