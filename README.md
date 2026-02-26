@@ -35,7 +35,7 @@ The project includes convenience scripts that automatically create a virtual env
 
 Simply run the batch file:
 ```bash
-run_wish_windows.bat
+run_wis_windows.bat
 ```
 
 This creates `.venv`, installs requirements, and launches the app without a persistent console window.
@@ -43,8 +43,8 @@ This creates `.venv`, installs requirements, and launches the app without a pers
 ### Linux / macOS
 
 ```bash
-chmod +x run_wish_linux.sh
-./run_wish_linux.sh
+chmod +x run_wis_linux.sh
+./run_wis_linux.sh
 ```
 
 ### Manual Setup
@@ -226,8 +226,8 @@ Both files are created automatically on first run.
 WIS/
 ├── main.py                          # Entry point
 ├── requirements.txt                 # Python dependencies
-├── run_wish_windows.bat             # Windows startup script
-├── run_wish_linux.sh                # Linux startup script
+├── run_wis_windows.bat             # Windows startup script
+├── run_wis_linux.sh                # Linux startup script
 ├── README.md
 ├── core/
 │   ├── __init__.py
