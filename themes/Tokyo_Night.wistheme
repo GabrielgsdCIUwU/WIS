@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Tokyo Night",
+  "colors": {
+    "bg": "#1a1b2e",
+    "bg2": "#16213e",
+    "bg3": "#0f3460",
+    "accent": "#7aa2f7",
+    "accent2": "#73daca",
+    "danger": "#f7768e",
+    "warning": "#e0af68",
+    "fg": "#c0caf5",
+    "fg2": "#565f89",
+    "border": "#292e42"
+  }
+}

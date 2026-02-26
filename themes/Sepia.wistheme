@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Sepia",
+  "colors": {
+    "bg": "#f5f0e8",
+    "bg2": "#fdf8f0",
+    "bg3": "#ede5d8",
+    "accent": "#8b5e3c",
+    "accent2": "#5a7c55",
+    "danger": "#b83232",
+    "warning": "#c87820",
+    "fg": "#2c1e14",
+    "fg2": "#8c7060",
+    "border": "#d0bca0"
+  }
+}

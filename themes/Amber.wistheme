@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Amber",
+  "colors": {
+    "bg": "#141008",
+    "bg2": "#1e1810",
+    "bg3": "#272015",
+    "accent": "#f5a623",
+    "accent2": "#f5c842",
+    "danger": "#e05252",
+    "warning": "#f5a623",
+    "fg": "#f5e6c8",
+    "fg2": "#9e8040",
+    "border": "#3a2e14"
+  }
+}

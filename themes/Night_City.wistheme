@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Night City",
+  "colors": {
+    "bg": "#060614",
+    "bg2": "#0c0c20",
+    "bg3": "#12122c",
+    "accent": "#fcee09",
+    "accent2": "#00d4ff",
+    "danger": "#ff003c",
+    "warning": "#fcee09",
+    "fg": "#e8e8f8",
+    "fg2": "#5050a0",
+    "border": "#1e1e40"
+  }
+}

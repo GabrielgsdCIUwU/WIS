@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Eorzea",
+  "colors": {
+    "bg": "#0c1020",
+    "bg2": "#141828",
+    "bg3": "#1c2238",
+    "accent": "#60a8e8",
+    "accent2": "#e8c060",
+    "danger": "#e85060",
+    "warning": "#e8c060",
+    "fg": "#d8e4f8",
+    "fg2": "#5870a0",
+    "border": "#243050"
+  }
+}

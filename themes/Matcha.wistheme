@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Matcha",
+  "colors": {
+    "bg": "#12181a",
+    "bg2": "#1a2420",
+    "bg3": "#222e2a",
+    "accent": "#88c0a0",
+    "accent2": "#c0d888",
+    "danger": "#e07070",
+    "warning": "#d4b870",
+    "fg": "#d8ede5",
+    "fg2": "#6a9080",
+    "border": "#2a3e36"
+  }
+}

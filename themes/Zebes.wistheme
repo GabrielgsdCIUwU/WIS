@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Zebes",
+  "colors": {
+    "bg": "#080c10",
+    "bg2": "#0e1418",
+    "bg3": "#141c22",
+    "accent": "#f06030",
+    "accent2": "#30d0c0",
+    "danger": "#f02020",
+    "warning": "#f0b030",
+    "fg": "#c8d8e0",
+    "fg2": "#405870",
+    "border": "#182830"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Deep Ocean",
+  "colors": {
+    "bg": "#020c14",
+    "bg2": "#04121e",
+    "bg3": "#081828",
+    "accent": "#00e5cc",
+    "accent2": "#0090ff",
+    "danger": "#ff4040",
+    "warning": "#ffcc00",
+    "fg": "#b0e8f0",
+    "fg2": "#2a6880",
+    "border": "#103050"
+  }
+}

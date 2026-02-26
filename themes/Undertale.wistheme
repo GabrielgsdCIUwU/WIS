@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Undertale",
+  "colors": {
+    "bg": "#000000",
+    "bg2": "#0a0a0a",
+    "bg3": "#141414",
+    "accent": "#ffffff",
+    "accent2": "#ffff00",
+    "danger": "#ff0000",
+    "warning": "#ffaa00",
+    "fg": "#ffffff",
+    "fg2": "#808080",
+    "border": "#282828"
+  }
+}

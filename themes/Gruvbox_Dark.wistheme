@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Gruvbox Dark",
+  "colors": {
+    "bg": "#1d2021",
+    "bg2": "#282828",
+    "bg3": "#32302f",
+    "accent": "#d79921",
+    "accent2": "#98971a",
+    "danger": "#cc241d",
+    "warning": "#d65d0e",
+    "fg": "#ebdbb2",
+    "fg2": "#928374",
+    "border": "#3c3836"
+  }
+}

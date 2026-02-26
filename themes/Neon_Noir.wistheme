@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Neon Noir",
+  "colors": {
+    "bg": "#080810",
+    "bg2": "#10101a",
+    "bg3": "#181824",
+    "accent": "#39ff14",
+    "accent2": "#ff6ec7",
+    "danger": "#ff073a",
+    "warning": "#ffdd00",
+    "fg": "#e8ffe8",
+    "fg2": "#407040",
+    "border": "#1a2a1a"
+  }
+}

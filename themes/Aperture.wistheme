@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Aperture",
+  "colors": {
+    "bg": "#0a0e12",
+    "bg2": "#111820",
+    "bg3": "#182030",
+    "accent": "#ff7020",
+    "accent2": "#6090ff",
+    "danger": "#ff2020",
+    "warning": "#ff7020",
+    "fg": "#d0dce8",
+    "fg2": "#506070",
+    "border": "#203040"
+  }
+}

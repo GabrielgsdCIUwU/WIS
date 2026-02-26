@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Yharnam",
+  "colors": {
+    "bg": "#100808",
+    "bg2": "#180e0e",
+    "bg3": "#201414",
+    "accent": "#c84820",
+    "accent2": "#c8a060",
+    "danger": "#e83030",
+    "warning": "#c8a060",
+    "fg": "#e0d0c0",
+    "fg2": "#806050",
+    "border": "#302010"
+  }
+}

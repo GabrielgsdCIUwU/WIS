@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Stardew",
+  "colors": {
+    "bg": "#1a2414",
+    "bg2": "#22301c",
+    "bg3": "#2a3c24",
+    "accent": "#88cc50",
+    "accent2": "#f0c060",
+    "danger": "#e05858",
+    "warning": "#f0c060",
+    "fg": "#e8f0d0",
+    "fg2": "#708858",
+    "border": "#3a5030"
+  }
+}

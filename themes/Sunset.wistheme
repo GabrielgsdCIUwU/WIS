@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Sunset",
+  "colors": {
+    "bg": "#1a0f1a",
+    "bg2": "#261826",
+    "bg3": "#321e32",
+    "accent": "#ff6b6b",
+    "accent2": "#ffa07a",
+    "danger": "#ff3333",
+    "warning": "#ffcc44",
+    "fg": "#ffe8e8",
+    "fg2": "#a06080",
+    "border": "#4a2040"
+  }
+}

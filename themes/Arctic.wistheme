@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Arctic",
+  "colors": {
+    "bg": "#f0f4f8",
+    "bg2": "#ffffff",
+    "bg3": "#e2ecf5",
+    "accent": "#1a6bbf",
+    "accent2": "#2aa198",
+    "danger": "#cc3333",
+    "warning": "#c97d00",
+    "fg": "#1a2a3a",
+    "fg2": "#607080",
+    "border": "#b0c8e0"
+  }
+}

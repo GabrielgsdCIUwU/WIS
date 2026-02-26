@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Lordran",
+  "colors": {
+    "bg": "#0d0a08",
+    "bg2": "#161210",
+    "bg3": "#1e1814",
+    "accent": "#c8a040",
+    "accent2": "#8a7a60",
+    "danger": "#b03020",
+    "warning": "#c8a040",
+    "fg": "#d0c8b0",
+    "fg2": "#7a6a50",
+    "border": "#302820"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Shrek",
+  "colors": {
+    "bg": "#00ff0d",
+    "bg2": "#00ff0d",
+    "bg3": "#00ff0d",
+    "accent": "#00ff0d",
+    "accent2": "#200ff0d",
+    "danger": "#00ff0d",
+    "warning": "#00ff0d",
+    "fg": "#00ff0d",
+    "fg2": "#00ff0d",
+    "border": "#00ff0d"
+  }
+}

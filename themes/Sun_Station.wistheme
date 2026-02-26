@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Sun Station",
+  "colors": {
+    "bg": "#0c0a04",
+    "bg2": "#161008",
+    "bg3": "#20180e",
+    "accent": "#f08820",
+    "accent2": "#f8d060",
+    "danger": "#f84020",
+    "warning": "#f8d060",
+    "fg": "#f8ecc8",
+    "fg2": "#907840",
+    "border": "#302010"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Minecraft",
+  "colors": {
+    "bg": "#1a1a1a",
+    "bg2": "#242424",
+    "bg3": "#2e2e2e",
+    "accent": "#5b8731",
+    "accent2": "#7eb8da",
+    "danger": "#b02020",
+    "warning": "#e8a020",
+    "fg": "#e0e0e0",
+    "fg2": "#808080",
+    "border": "#3a3a3a"
+  }
+}

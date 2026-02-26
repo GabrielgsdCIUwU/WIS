@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Ocean Breeze",
+  "colors": {
+    "bg": "#071520",
+    "bg2": "#0d2030",
+    "bg3": "#102840",
+    "accent": "#00b4d8",
+    "accent2": "#48cae4",
+    "danger": "#e05252",
+    "warning": "#f0c040",
+    "fg": "#caf0f8",
+    "fg2": "#5a8fa6",
+    "border": "#1a3a50"
+  }
+}

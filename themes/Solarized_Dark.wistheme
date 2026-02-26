@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Solarized Dark",
+  "colors": {
+    "bg": "#002b36",
+    "bg2": "#073642",
+    "bg3": "#0d4452",
+    "accent": "#268bd2",
+    "accent2": "#2aa198",
+    "danger": "#dc322f",
+    "warning": "#b58900",
+    "fg": "#839496",
+    "fg2": "#586e75",
+    "border": "#124652"
+  }
+}

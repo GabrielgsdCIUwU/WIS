@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Ayu Dark",
+  "colors": {
+    "bg": "#0d1017",
+    "bg2": "#13191f",
+    "bg3": "#1a2230",
+    "accent": "#ffb454",
+    "accent2": "#95e6cb",
+    "danger": "#ff3333",
+    "warning": "#e6b450",
+    "fg": "#bfbdb6",
+    "fg2": "#556070",
+    "border": "#1d2a38"
+  }
+}

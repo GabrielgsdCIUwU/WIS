@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Cyberpunk",
+  "colors": {
+    "bg": "#0d0d1a",
+    "bg2": "#131325",
+    "bg3": "#19192f",
+    "accent": "#ff00ff",
+    "accent2": "#00ffff",
+    "danger": "#ff3300",
+    "warning": "#ffff00",
+    "fg": "#e8e8ff",
+    "fg2": "#6666aa",
+    "border": "#2a2a50"
+  }
+}

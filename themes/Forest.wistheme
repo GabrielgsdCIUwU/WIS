@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Forest",
+  "colors": {
+    "bg": "#0e1a12",
+    "bg2": "#162019",
+    "bg3": "#1c2b20",
+    "accent": "#5db87a",
+    "accent2": "#a8d86e",
+    "danger": "#e05a5a",
+    "warning": "#d4a844",
+    "fg": "#d0e8d5",
+    "fg2": "#6e9478",
+    "border": "#2a4030"
+  }
+}

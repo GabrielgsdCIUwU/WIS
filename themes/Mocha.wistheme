@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Mocha",
+  "colors": {
+    "bg": "#1c1410",
+    "bg2": "#241c16",
+    "bg3": "#2e231c",
+    "accent": "#d4956a",
+    "accent2": "#a8bf7a",
+    "danger": "#d46a6a",
+    "warning": "#d4b06a",
+    "fg": "#e8ddd5",
+    "fg2": "#9e8878",
+    "border": "#3e2e24"
+  }
+}

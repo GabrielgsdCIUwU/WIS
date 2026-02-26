@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Sheikah",
+  "colors": {
+    "bg": "#05080d",
+    "bg2": "#0a1020",
+    "bg3": "#0f1830",
+    "accent": "#4dd9e8",
+    "accent2": "#e84d6a",
+    "danger": "#e84d6a",
+    "warning": "#e8b84d",
+    "fg": "#c8e8f0",
+    "fg2": "#3a6070",
+    "border": "#1a3040"
+  }
+}

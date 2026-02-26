@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Underworld",
+  "colors": {
+    "bg": "#0e080c",
+    "bg2": "#160c14",
+    "bg3": "#1e101c",
+    "accent": "#e0603a",
+    "accent2": "#a060e0",
+    "danger": "#e02020",
+    "warning": "#e0a030",
+    "fg": "#f0d8c8",
+    "fg2": "#806058",
+    "border": "#301828"
+  }
+}

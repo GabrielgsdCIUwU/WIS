@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Rose Pine",
+  "colors": {
+    "bg": "#191724",
+    "bg2": "#1f1d2e",
+    "bg3": "#26233a",
+    "accent": "#c4a7e7",
+    "accent2": "#9ccfd8",
+    "danger": "#eb6f92",
+    "warning": "#f6c177",
+    "fg": "#e0def4",
+    "fg2": "#908caa",
+    "border": "#393552"
+  }
+}

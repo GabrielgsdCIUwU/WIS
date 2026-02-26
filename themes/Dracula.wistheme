@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Dracula",
+  "colors": {
+    "bg": "#282a36",
+    "bg2": "#313341",
+    "bg3": "#383a4a",
+    "accent": "#bd93f9",
+    "accent2": "#50fa7b",
+    "danger": "#ff5555",
+    "warning": "#f1fa8c",
+    "fg": "#f8f8f2",
+    "fg2": "#9099a6",
+    "border": "#44475a"
+  }
+}

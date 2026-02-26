@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Catppuccin Mocha",
+  "colors": {
+    "bg": "#1e1e2e",
+    "bg2": "#181825",
+    "bg3": "#313244",
+    "accent": "#cba6f7",
+    "accent2": "#94e2d5",
+    "danger": "#f38ba8",
+    "warning": "#fab387",
+    "fg": "#cdd6f4",
+    "fg2": "#6c7086",
+    "border": "#45475a"
+  }
+}

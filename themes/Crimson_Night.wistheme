@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Crimson Night",
+  "colors": {
+    "bg": "#130a0a",
+    "bg2": "#1e1010",
+    "bg3": "#261515",
+    "accent": "#e05555",
+    "accent2": "#e08855",
+    "danger": "#ff3333",
+    "warning": "#f0a500",
+    "fg": "#f0d8d8",
+    "fg2": "#8c6060",
+    "border": "#3a1a1a"
+  }
+}

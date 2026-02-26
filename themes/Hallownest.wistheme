@@ -1,0 +1,16 @@
+{
+  "wis_theme": true,
+  "name": "Hallownest",
+  "colors": {
+    "bg": "#080c18",
+    "bg2": "#0e1424",
+    "bg3": "#141c30",
+    "accent": "#8bbde8",
+    "accent2": "#e8c87a",
+    "danger": "#e05050",
+    "warning": "#e8c87a",
+    "fg": "#d0daf0",
+    "fg2": "#4a5878",
+    "border": "#202a44"
+  }
+}
